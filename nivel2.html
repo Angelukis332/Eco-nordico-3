@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Eco nórdico · Nivel 2: La marea humana</title>
+  <link rel="stylesheet" href="nivel2.css">
+  <link rel="stylesheet" href="guides.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="hud">
+      <div class="brand"><span>💧</span><div><small>ECO NÓRDICO · NIVEL 2</small><b>La marea humana</b></div></div>
+      <div class="meter"><small>IMPACTO HÍDRICO REDUCIDO</small><div><i id="impactFill"></i></div></div>
+      <div class="stats"><span>💧 <b id="points">0</b></span><span>⏱ <b id="time">80</b>s</span></div>
+    </header>
+    <section class="stage">
+      <canvas id="game" width="960" height="640" aria-label="Laberinto del nivel 2"></canvas>
+      <div id="legend" class="legend">WASD / Flechas para moverte · Recoge botellas y cierra fugas · Evita al Haalandbot</div>
+    </section>
+    <div id="guideSlot" aria-live="polite"></div>
+    <footer><span>♻ Botella recuperada</span><span>🔧 Fuga cerrada</span><span>🤖 Haalandbot = derroche hídrico</span></footer>
+  </main>
+
+  <section id="intro" class="overlay"><div class="modal intro-card"><div class="drop">💧</div><p class="eyebrow">ESTACIÓN PRAE · ESTRÉS HÍDRICO</p><h1>La Marea Humana</h1><p>En un Mundial, miles de personas elevan la demanda de agua. Recorre el estadio, recupera recursos y evita al Haalandbot antes de que el tiempo se agote.</p><button id="startBtn">Comenzar misión <b>→</b></button><small>Consejo: las fugas valen más puntos, pero el Haalandbot acorta distancia cada pocos segundos.</small></div></section>
+  <section id="result" class="overlay hidden"><div class="modal result-card"><div id="resultIcon" class="result-icon">✦</div><p id="resultLabel" class="eyebrow"></p><h2 id="resultTitle"></h2><p id="resultMessage"></p><div class="result-stats"><span><b id="finalPoints">0</b>PUNTOS</span><span><b id="finalItems">0</b>RECURSOS</span></div><button id="resultAction"></button></div></section>
+  <section id="pause" class="overlay hidden"><div class="modal result-card"><div class="result-icon">Ⅱ</div><p class="eyebrow">JUEGO EN PAUSA</p><h2>Misión pausada</h2><button id="resumeBtn">Reanudar</button><button id="restartBtn">Reiniciar nivel</button><button id="menuBtn">Salir al menú principal</button></div></section>
+  <script src="guide-runtime.js"></script>
+  <script src="nivel2.js"></script>
+</body>
+</html>
